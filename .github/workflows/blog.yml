@@ -27,7 +27,7 @@ jobs:
           cache: 'poetry'
 
       - name: Install dependencies
-        run: poetry install --with=dev
+        run: poetry install
 
       - name: Set cache ID
         run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV 
