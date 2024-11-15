@@ -1,5 +1,8 @@
 site_name: Blog
 site_url: https://ivansaul.github.io/docs
+repo_url: https://github.com/ivansaul/docs
+repo_name: ivansaul/docs
+edit_uri: edit/master/docs/
 theme:
   name: material
   features:
@@ -8,11 +11,19 @@ theme:
     - navigation.instant
     - navigation.instant.progress
     - navigation.footer
+    - navigation.sections
+    - navigation.top
     - search.suggest
     - search.highlight
 
+    - content.action.view
+    - content.action.edit
+
   icon:
     annotation: material/plus-circle
+    repo: fontawesome/brands/git-alt
+    edit: material/pencil
+    view: material/eye
 
   font:
     text: Roboto
@@ -38,13 +49,25 @@ theme:
         icon: material/weather-sunny
         name: Switch to system preference
 
+nav:
+  - SWIFT:
+      - Getting Started:
+          - swift/getting-started/extensions-in-swift.md
+
+  - SWIFTUI:
+      - Getting Started:
+          - swiftui/getting-started/creating-shapes-in-swiftui.md
+
 markdown_extensions:
   - attr_list
   - md_in_html
 
+  - admonition
+  - pymdownx.blocks.caption
   - pymdownx.inlinehilite
   - pymdownx.snippets
   - pymdownx.superfences
+  - pymdownx.details
 
   - pymdownx.highlight:
       anchor_linenums: true
@@ -54,6 +77,21 @@ markdown_extensions:
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+plugins:
+  - search
+  - glightbox:
+      zoomable: false
+      draggable: true
+  - git-revision-date-localized:
+      enable_creation_date: true
+      type: timeago
+  - git-committers:
+      enable: true
+      branch: master
+      repository: ivansaul/docs
+
+  - git-authors
 
 extra:
   social:
@@ -65,3 +103,6 @@ extra:
       link: https://twitter.com/squidfunk
     - icon: fontawesome/brands/linkedin
       link: https://www.linkedin.com/in/squidfunk
+
+extra_css:
+  - stylesheets/extra.css
