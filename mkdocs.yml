@@ -87,11 +87,8 @@ plugins:
       enable_creation_date: true
       type: timeago
   - git-committers:
-      enable: true
-      branch: master
       repository: ivansaul/docs
-
-  - git-authors
+      branch: master
 
 extra:
   social:
